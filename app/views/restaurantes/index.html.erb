@@ -1,0 +1,25 @@
+<%= render :partial => "titulo" %>
+<h1>Listing Restaurante</h1>
+
+<table>
+	<tr>
+		<th> Nome </th>
+		<th> Endereco </th>
+		<th> Especialidade </th>
+
+	</tr>
+	
+	<% for restaurante in @restaurantes%>
+	<tr>
+		<td> <%=h restaurante.nome%> </td>
+		<td> <%=h restaurante.endereco%> </td>
+		<td> <%=h restaurante.especialidade%> </td>
+		
+		<td> <%=link_to " Mostrar ", {:action => "show", :id => restaurante} %> </td>
+		<td> <%=link_to " Editar ", {:action => "edit", :id => restaurante} %> </td>
+	</tr>
+	<% end %>
+</table>
+<%= will_paginate @restaurantes, :previous_label => "Anterior", :next_label => "Próxima"   %>
+<%= link_to "Novo", {:action => "new" } %>
+

@@ -1,0 +1,26 @@
+<h1>Listing pessoas</h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Telefone</th>
+    <th>Peso</th>
+    <th>Data nascto</th>
+  </tr>
+
+<% @pessoas.each do |pessoa| %>
+  <tr>
+    <td><%=h pessoa.nome %></td>
+    <td><%=h pessoa.telefone %></td>
+    <td><%=h pessoa.peso %></td>
+    <td><%=h pessoa.data_nascto %></td>
+    <td><%= link_to 'Show', pessoa %></td>
+    <td><%= link_to 'Edit', edit_pessoa_path(pessoa) %></td>
+    <td><%= link_to 'Destroy', pessoa, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New pessoa', new_pessoa_path %>

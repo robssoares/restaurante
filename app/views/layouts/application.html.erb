@@ -1,0 +1,15 @@
+<%= stylesheet_link_tag 'scaffold' %>
+<html>
+	<head>
+		<%= javascript_include_tag :all %>
+		<title> Programa de Qualificação de Restaurantes </title>
+	</head>
+    
+	<body>
+		<h1> Sistema da Roberta </h1>
+
+		<%=menu_principal%>
+		<p style ="color: green"> <%=flash[:notice]%> </p>
+        <%= yield %>
+	</body>
+</html>

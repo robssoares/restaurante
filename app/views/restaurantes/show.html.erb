@@ -1,0 +1,34 @@
+<%= render :partial => "titulo" %>
+<h1>Show restaurante</h1>
+
+<p>
+  <b>Nome:</b>
+  <%=h @restaurante.nome %>
+</p>
+
+<p>
+  <b>Endereco:</b>
+  <%=h @restaurante.endereco %>
+</p>
+
+<p>
+  <b>Especialidade:</b>
+  <%=h @restaurante.especialidade %>
+</p>
+
+<b> Nota Media: </b> <%=h @restaurante.qualificacoes.average(:nota)%> <br/>
+<b> Qualificacoes: </b> <%=h @restaurante.qualificacoes.count %> <br/>
+<b> Nota Media: </b> <%=h @restaurante.qualificacoes.average(:valor_gasto)%> <br/>
+
+<%unless @restaurante.comentarios.empty?%>
+ <%= comentarios @restaurante %>
+<%end%>
+<%=novo_comentario(@restaurante)%>
+
+<%= link_to "Edit", {:action => "edit", :id => @restaurante } %>
+<%= link_to 'Back', {:action => "index"} %>
+
+
+
+
+
